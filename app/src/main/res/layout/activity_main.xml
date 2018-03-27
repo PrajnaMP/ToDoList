@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <LinearLayout
+        android:id="@+id/search_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1"
+        >
+
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".5"
+            android:background="#fff"
+            android:hint="Search here"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+           />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:weightSum=".9">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:background="@drawable/dd_c_cancel_background"
+                android:gravity="center"
+                android:text="CANCEL"
+                android:textColor="#fff"
+                android:visibility="invisible"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/due_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:background="@drawable/dd_c_cancel_background"
+                android:gravity="center"
+                android:text="DD"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3"
+                android:background="@drawable/dd_c_cancel_background"
+                android:gravity="center"
+                android:text="CD"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+<!--
+        <EditText
+            android:id="@+id/search_view_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".5"
+            android:layout_marginTop="20dp"
+            android:background="#fff"
+            android:hint="Search here.........."
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/cancel_cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:background="@drawable/dd_c_cancel_background"
+            android:gravity="center"
+            android:text="CANCEL"
+            android:textColor="#fff"
+            android:visibility="visible"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp" />-->
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:layout_marginTop="20dp"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/device_text"
+        android:layout_weight=".5"
+        android:text="Device"
+        android:textSize="20dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/cloud_text"
+        android:background="@color/light_gray"
+        android:layout_weight=".5"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimary"
+        android:text="Cloud"/>
+
+</LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:layout_marginTop="10dp"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/current_location"
+        android:layout_weight=".5"
+        android:text="CL"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/current_location_view"
+        android:layout_weight=".5"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="current location"/>
+
+</LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/no_result_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No results"
+            android:textSize="30dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/no_completed_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No Completed Task Found"
+            android:textSize="30dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/event_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tap on '+' to add a task"
+            android:textSize="30dp"
+            android:visibility="invisible" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </FrameLayout>
+</LinearLayout>
